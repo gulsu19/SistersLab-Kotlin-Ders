@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/birinciFragment"
+        android:icon="@drawable/add_reaction"
+        android:title="1. Fragment" />
+    <item
+        android:id="@+id/ikinciFragment"
+        android:icon="@drawable/attach_money"
+        android:title="2. Fragment" />
+</menu>
