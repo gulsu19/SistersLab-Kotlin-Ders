@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "25510658673",
+    "firebase_url": "https://kisileruygulamasi-556ca-default-rtdb.firebaseio.com",
+    "project_id": "kisileruygulamasi-556ca",
+    "storage_bucket": "kisileruygulamasi-556ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25510658673:android:3cce68ac6d5c57738a91d0",
+        "android_client_info": {
+          "package_name": "com.example.kisileruygulamas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "25510658673-f2uu44rmijcgemf0m8po51tcqp71tvqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDmpGLVtRN7rXguU_wFml1h5Sow3e5fhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "25510658673-f2uu44rmijcgemf0m8po51tcqp71tvqu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
