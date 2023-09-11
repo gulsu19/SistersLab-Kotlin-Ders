@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_sil"
+        android:title="Sil" />
+    <item
+        android:id="@+id/action_duzenle"
+        android:title="Düzenle" />
+    <item
+        android:id="@+id/action_favori"
+        android:title="Favoriye Ekle" />
+    <item
+        android:id="@+id/action_favoriCikar"
+        android:title="Favoriden Çıkar" />
+</menu>
