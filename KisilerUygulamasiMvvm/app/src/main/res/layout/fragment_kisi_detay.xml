@@ -28,7 +28,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextKisiAd"
-                android:text="@{kisiNesnesi.kisiAd}"
+                android:text="@{kisiNesnesi.kisi_ad}"
                 android:layout_width="match_parent"
                 android:layout_height="66dp"
                 android:hint="Kişi Ad" />
@@ -47,7 +47,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextKisiTel"
-                android:text="@{kisiNesnesi.kisiTel}"
+                android:text="@{kisiNesnesi.kisi_tel}"
                 android:layout_width="323dp"
                 android:layout_height="70dp"
                 android:hint="Kişi Tel" />
@@ -61,7 +61,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginEnd="40dp"
             android:text="Güncelle"
-            android:onClick="@{()-> kisiDetayFragment.buttonGuncelle(kisiNesnesi.kisiId, editTextKisiAd.getText().toString(),editTextKisiTel.getText().toString())}"
+            android:onClick="@{() -> kisiDetayFragment.buttonGuncelle(kisiNesnesi.kisi_id, editTextKisiAd.getText().toString,editTextKisiTel.getText().toString())}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,6 +70,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarKisiDetay"
             android:layout_width="409dp"
+            app:title="@{kisiDetayToolbarBaslik}"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"

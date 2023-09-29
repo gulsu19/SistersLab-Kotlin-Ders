@@ -15,7 +15,9 @@ import com.example.kisileruygulamasimvvm.ui.viewmodel.AnasayfaViewModel
 import com.example.kisileruygulamasimvvm.util.gecisYap
 import com.google.android.material.snackbar.Snackbar
 
-class KisilerAdapter(var mContext: Context, var kisilerListesi:List<Kisiler>, var viewModel: AnasayfaViewModel)
+class KisilerAdapter(var mContext: Context,
+                     var kisilerListesi:List<Kisiler>,
+                      var viewModel: AnasayfaViewModel)
     : RecyclerView.Adapter<KisilerAdapter.CardTasarimTutucu>() {
 
     inner class CardTasarimTutucu(tasarim: CardTasarimBinding) : RecyclerView.ViewHolder(tasarim.root){
@@ -29,7 +31,7 @@ class KisilerAdapter(var mContext: Context, var kisilerListesi:List<Kisiler>, va
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardTasarimTutucu {
         val layoutInflater = LayoutInflater.from(mContext)
-        val tasarim: CardTasarimBinding = DataBindingUtil.inflate(layoutInflater, R.layout.card_tasarim,parent,false)
+        val tasarim: CardTasarimBinding = DataBindingUtil.inflate(layoutInflater,R.layout.card_tasarim,parent,false)
         return CardTasarimTutucu(tasarim)
     }
 
@@ -48,9 +50,9 @@ class KisilerAdapter(var mContext: Context, var kisilerListesi:List<Kisiler>, va
             Navigation.gecisYap(it,gecis)
         }
         t.imageViewSil.setOnClickListener {
-            Snackbar.make(it,"${kisi.kisiAd} silinsin mi?",Snackbar.LENGTH_LONG)
+            Snackbar.make(it,"${kisi.kisi_ad} silinsin mi?",Snackbar.LENGTH_LONG)
                 .setAction("EVET"){
-                    viewModel.sil(kisi.kisiId)
+                   viewModel.sil(kisi.kisi_id)
                 }.show()
         }
 

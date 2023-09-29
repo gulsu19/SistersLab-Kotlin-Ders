@@ -12,21 +12,21 @@ import androidx.navigation.fragment.navArgs
 import com.example.kisileruygulamasimvvm.R
 import com.example.kisileruygulamasimvvm.databinding.FragmentKisiDetayBinding
 import com.example.kisileruygulamasimvvm.ui.viewmodel.KisiDetayViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class KisiDetayFragment : Fragment() {
-private lateinit var tasarim: FragmentKisiDetayBinding
-private lateinit var viewModel: KisiDetayViewModel
-
+    private lateinit var tasarim: FragmentKisiDetayBinding
+    private lateinit var viewModel: KisiDetayViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        tasarim = DataBindingUtil.inflate(inflater,R.layout.fragment_kisi_detay,container,false)
+        tasarim = DataBindingUtil.inflate(inflater, R.layout.fragment_kisi_detay, container, false)
         tasarim.kisiDetayFragment = this
 
         tasarim.kisiDetayToolbarBaslik = "Kişi Detay"
 
         val bundle: KisiDetayFragmentArgs by navArgs()
         val gelenKisi = bundle.kisi
-
         tasarim.kisiNesnesi = gelenKisi
 
         return tasarim.root
@@ -34,11 +34,11 @@ private lateinit var viewModel: KisiDetayViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val tempViewModel : KisiDetayViewModel by viewModels()
+        val tempViewModel : KisiDetayViewModel by viewModels ()
         viewModel = tempViewModel
     }
 
-    fun buttonGuncelle(kisiId: Int,kisiAd: String, kisiTel: String){
+    fun buttonGuncelle(kisiId: Int, kisiAd: String, kisiTel: String) {
         viewModel.guncelle(kisiId,kisiAd,kisiTel)
     }
 

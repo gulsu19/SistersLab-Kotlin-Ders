@@ -23,22 +23,28 @@ import com.example.kisileruygulamasimvvm.databinding.FragmentAnasayfaBinding
 import com.example.kisileruygulamasimvvm.ui.adapter.KisilerAdapter
 import com.example.kisileruygulamasimvvm.ui.viewmodel.AnasayfaViewModel
 import com.example.kisileruygulamasimvvm.util.gecisYap
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AnasayfaFragment : Fragment(),SearchView.OnQueryTextListener {
     private lateinit var tasarim: FragmentAnasayfaBinding
     private lateinit var viewModel: AnasayfaViewModel
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         tasarim = DataBindingUtil.inflate(inflater,R.layout.fragment_anasayfa,container,false)
         tasarim.anasayfaFragment = this
 
-        tasarim.anasayfaToolbarBaslik= "Kişiler"
+        tasarim.anasayfaToolbarBaslik = "Kişiler"
         (activity as AppCompatActivity).setSupportActionBar(tasarim.toolbarAnasayfa)
 
+
         viewModel.kisilerListesi.observe(viewLifecycleOwner){
+
             val adapter = KisilerAdapter(requireContext(),it,viewModel)
             tasarim.kisilerAdapter = adapter
         }
+
+
+
 
         requireActivity().addMenuProvider(object : MenuProvider{
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
@@ -61,12 +67,13 @@ class AnasayfaFragment : Fragment(),SearchView.OnQueryTextListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val tempViewModel : AnasayfaViewModel by viewModels()
+        val tempViewModel : AnasayfaViewModel by viewModels ()
         viewModel = tempViewModel
     }
 
     fun fabTikla(it:View){
         Navigation.gecisYap(R.id.kisiKayitGecis,it)
+
     }
 
     override fun onQueryTextSubmit(query: String): Boolean {
